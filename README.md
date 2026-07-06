@@ -43,13 +43,18 @@ The Mission Dispatcher interface utilizes a strict **`[X Y]` sequential coordina
 
 To run this project from a clean system state, open four separate terminal windows and run the following sequences:
 
-# 🖥️ TERMINAL 1 - Core Physics Simulator (Turtlebot)
+
+
+### Terminal-Wise Instructions
+```
+
+### 🖥️ Terminal 1 - Core Physics Simulator (Turtlebot)
 ```bash
 cd ~/dasgu/ros2/genesis_sim/
 source /opt/ros/humble/setup.bash
 python3 turtlebot_sim.py
 
-### 🗺️ TERMINAL 2 - Navigation Stack (Nav2)
+### 🗺️ Terminal 2 - Navigation Stack (Nav2)
 ```bash
 cd ~/dasgu/ros2/genesis_sim/
 source /opt/ros/humble/setup.bash
@@ -63,7 +68,7 @@ source /opt/ros/humble/setup.bash
 source install/setup.bash
 ros2 run mission_control dashboard
 
-### 🛰️ TERMINAL 4 - Telemetry Echo (Optional Monitoring)
+### 🛰️ Terminal 4 - Telemetry Echo (Optional Monitoring)
 ```bash
 source /opt/ros/humble/setup.bash
 ros2 topic echo /cmd_vel
