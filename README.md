@@ -1,8 +1,11 @@
 # 🚀 Project Kratos: Mission Control Dashboard & Navigation Stack
 
 ### 📺 System Verification Video
-👉 [**Click Here to Watch the Full System Demo Video**]https://drive.google.com/file/d/16pvSpx7VExS1l-PbRo9l8NJkZXNLPmMZ/view?usp=sharing
-
+👉 [**Click Here to Watch the Full System Demo Video**]
+https://drive.google.com/file/d/16pvSpx7VExS1l-PbRo9l8NJkZXNLPmMZ/view?usp=sharing --- GUI Nav2 Control (Week3)
+https://drive.google.com/file/d/1qRdI30Lx_w6Fodq4ENaDAhFO8J6IroHU/view?usp=sharing --- OpenCV ArUCO Search (Week4)
+ 
+*Week4 files uploaded as a Branch.
 ---
 
 ## 🛠️ Overview: GUI & Node Functionality
