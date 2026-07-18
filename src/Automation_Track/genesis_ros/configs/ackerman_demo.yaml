@@ -1,0 +1,163 @@
+scene:
+  n_envs: 1 # shouldnt be changed
+  sim:
+    dt: 0.05
+    substeps: 1
+
+  show_Viewer: false
+
+  profiling_options:
+    show_FPS: false
+
+  viewer_config:
+    max_FPS: 60
+    camera_fov: 40
+    enable_interaction: false
+
+  vis_config:
+    show_cameras: false
+    shadow: false
+    plane_reflection: false
+    lights:
+      - type: directional
+        dir: [-1, -1, -1]
+        color: [1.0, 1.0, 1.0]
+        intensity: 5.0
+
+  rigid_config:
+    enable_collision: true
+    enable_joint_limit: true
+    enable_self_collision: false
+    max_collision_pairs: 300
+
+world:
+  name: plane
+  world_type: plane #[plane, terrain, file]
+
+objects:
+
+robots:
+  robot_one:
+    visualize_contact: true
+    namespace: "robot"
+    control:
+      joint_commands_topic: joint_commands
+      joint_commands_topic_frequency: 50
+      joint_states_topic: joint_states
+      joint_states_topic_frequency: 50
+      joint_control_topic: joint_control
+      joint_control_topic_frequency: 50
+      joint_properties: 
+        left_wheel_steering_joint:
+          kp: 30
+          kv: 30
+          command: position
+        rear_left_wheel_joint:
+          kp: 50
+          kv: 50
+          command: velocity
+        rear_right_wheel_joint:
+          kp: 50
+          kv: 50
+          command: velocity
+        right_wheel_steering_joint:
+          kp: 30
+          kv: 30
+          command: position
+
+    morph:
+      path: "src/gs_ros2_control_demos/urdf/test_ackermann_drive.xacro.urdf"
+      pos: [0.0, 0.0, 0.0]
+      euler: [0.0, 0.0, 0.0]
+      quat: null
+      visualization: true
+      collision: true
+      requires_jac_and_IK: true
+      scale: 1.0
+      convexify: null
+      recompute_inertia: false
+      fixed: false
+      prioritize_urdf_material: false
+      merge_fixed_links: false
+      links_to_keep: [lidar_link,camera_link,laser_link]
+
+    material:
+      type: rigid
+      rho: 200.0
+      friction: null
+      needs_coup: true
+      coup_friction: 0.1
+      coup_softness: 0.002
+      coup_restitution: 0.0
+      sdf_cell_size: 0.005
+      sdf_min_res: 32
+      sdf_max_res: 128
+      gravity_compensation: 0
+
+    sensors: # all the sensor configs are in the <sensor_configs> section
+    - name: front_cam
+      general_sensor_options:
+        sensor_type: cam
+        delay: 0.0
+        update_ground_truth_only: false
+        draw_debug: false
+      ros_options:
+        frame_id: lidar_link
+        frequency: 50.0
+        qos_history: keep_last
+        qos_depth: 10
+        qos_reliability: reliable
+        qos_durability: volatile
+      rigid_options:
+        link: lidar_link
+        pos_offset: [0.0, 0.0, 0.0]
+        euler_offset: [90.0, 0.0, -90.0]
+      camera_types: [rgb, depth, segmentation, normal]
+      res: [640, 480]
+      fov: 30.0
+      near: 0.05
+      far: 10.0
+      aperture: 2.8
+      denoise: true
+      spp: 256
+      model: pinhole
+      focus_dist: 0.0
+      gui: false
+      add_noise: false
+      noise_mean: 0.0
+      noise_std: 0.01
+
+    - name: lidar
+      general_sensor_options:
+        sensor_type: lidar
+        delay: 0.0
+        update_ground_truth_only: false
+        draw_debug: false
+      ros_options:
+        frame_id: lidar_link
+        frequency: 10.0
+        topic: lidar_topic
+        qos_history: keep_last
+        qos_depth: 10
+        qos_reliability: reliable
+        qos_durability: volatile  
+      rigid_options:
+        link: lidar_link
+        pos_offset: [0.0, 0.0, 0.5]
+        euler_offset: [0.0, 0.0, 0.0]
+      spherical_pattern:
+        fov: [360.0, 30.0]
+        n_points: [64, 128]
+      min_range: 0.3
+      max_range: 100.0
+      draw_point_radius: 0.03
+      ray_start_color: [0.5, 0.5, 1.0, 1.0]
+      ray_hit_color: [1.0, 0.0, 0.0, 1.0]
+      return_points_in_world_frame: false
+      add_noise: false
+      noise_mean: 0.0
+      noise_std: 0.01
+
+
+
+  
