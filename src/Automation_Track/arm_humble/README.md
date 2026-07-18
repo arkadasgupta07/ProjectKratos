@@ -1,4 +1,4 @@
-# Week 4 Assignment: Robotic Arm Simulation (arm_humble)
+# Week 3 Assignment: Robotic Arm Simulation (arm_humble)
 
 This package contains the setup for visualizing and simulating a robotic arm using ROS 2 Humble. A URDF file defines the connections between the arm joints and links, and a launch file handles the visualization configuration inside RViz.
 
