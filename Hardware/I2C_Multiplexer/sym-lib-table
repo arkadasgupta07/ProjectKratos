@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "My_Symbols")(type "KiCad")(uri "C:/Users/dasgu/KiCaD Files/My_Custom_Parts.kicad_sym")(options "")(descr ""))
+)
