@@ -6,7 +6,7 @@
 <p align="center">
   <strong>~ Arka Dasgupta ~</strong><br>
   <strong>BITS Pilani, K. K. Birla Goa Campus</strong><br>
-  <em>Aspiring to develop rovers equipped with advanced subsystems for interplanetary deep space missions.</em>
+  <em>Aspiring to develop rovers by engineering their electronics, controls and automation subsystems.</em>
 </p>
 
 ---
