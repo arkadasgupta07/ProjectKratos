@@ -1,0 +1,1 @@
+Model files for the given 5x5 and 10x10 mazes. No need to alter these.
