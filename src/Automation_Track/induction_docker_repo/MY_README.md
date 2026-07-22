@@ -2,6 +2,8 @@
 
 An autonomous maze navigation package for ROS 2 Humble. This node utilizes a reactive wall-following algorithm powered by 2D LiDAR telemetry to solve $10 \times 10$ simulation mazes without human intervention or map-based global planners.
 
+** Video Link **: https://drive.google.com/file/d/1yhfTBL04FrF4i6kJy2x2GSX5BVzHJcEB/view?usp=sharing 
+
 ---
 
 ## 🛠️ System Overview & Architecture
